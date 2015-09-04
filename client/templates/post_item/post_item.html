@@ -1,0 +1,21 @@
+<template name="post_item">
+  <a href="{{link}}" class="post-item column needsclick">
+    <span class="star-badge absolute top depth-6 {{#if upvoted}}js-downvote{{else}}js-upvote{{/if}}">
+      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0.5 16.5 16 16" enable-background="new 0.5 16.5 16 16"><path fill="#FFF" d="M8.5 16.5l1.889 6h6.111l-4.944 4 1.944 6-5-4-5 4 1.944-6-4.944-4h6.111z"/></svg>
+      <span class="star-count">{{stars}}</span>
+    </span>
+    <div class="screenshot-wrap relative">
+      <span class="screenshot-loader absolute-center depth-5" style="background-color: {{color}};">{{> loader}}</span>
+      <img class="screenshot" src="{{#if image}}{{image}}{{else}}http://api.screenshotmachine.com/?key=0151a3&size=L&url={{link}}{{/if}}" alt="{{title}}">
+    </div>
+    <div class="p2 relative">
+      <div class="post-title">{{title}}</div>
+      <div class="post-description">{{description}}</div>
+      {{#if ownsPost}}
+      <div class="post-edit depth-5 js-edit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"><path class="edit-background" fill="" d="M42 42h-42l42-42z"/><path class="edit-icon" fill="" d="M21 36l5-2-3-3-2 5zm10-13.1l3 3-7 7-3-3 7-7zm6 .1l-2 2-3-3 2-2 3 3z"/></svg>
+      </div>
+      {{/if}}
+    </div>
+  </a>
+</template>

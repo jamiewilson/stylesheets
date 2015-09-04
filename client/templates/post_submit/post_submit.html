@@ -1,0 +1,26 @@
+<template name="post_submit">
+  <form class="container fadeInUp">
+    <label class="label" for="link">Link</label>
+    <input class="input mb2" name="link" type="text" value="" placeholder="http://" tabindex="1" required/>
+
+    <label class="label" for="title">Title <span class="label-note js-counter-title">70</span></label>
+    <input class="input mb2" name="title" type="text" value="" placeholder="Name your post" tabindex="2" required/>
+
+    <label class="label" for="description">Description <span class="label-note js-counter-description">140</span></label>
+    <textarea class="input textarea resize-vertical lh3 mb2" name="description" type="text" value="" placeholder="Short description" rows="2" tabindex="3" required></textarea>
+
+    <label class="label" for="image">Image<span class="label-note">Will generate a screenshot by default</span></label>
+    <div class="row center-left mb2">
+      <img class="image-thumbnail" src="">
+      <div class="filepicker flex1 btn btn-outline">Add An Image</div>
+      <input class="input hidden" type="text" name="image"/>
+    </div>
+
+    <label class="label" for="color">Color</label>
+    <input class="input novalidate w100 mb3" name="color" type="color" value="#f2f2f2" tabindex="4"/>
+
+    <div class="row center-right">
+      <input type="submit" value="Submit" class="btn w100"/>
+    </div>
+  </form>
+</template>

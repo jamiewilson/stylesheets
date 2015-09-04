@@ -1,0 +1,101 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition-property: opacity, visibility, transform;
+  transition-timing-function: cubic-bezier(0.65, 0.2, 0.35, 0.9);
+  transition-duration: 200ms;
+
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+
+  background: fade-out($black, 0.1);
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+#loginOrSignUp {
+  min-height: 350px;
+  border-radius: $border-radius;
+
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition-duration: 500ms;
+  transition-property: transform, opacity;
+  @include small {
+    width: 100%;
+  }
+}
+
+.is-open #loginOrSignUp  {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#loginOrSignUp {
+  background: $silver;
+  padding: 2rem;
+}
+
+#loginOrSignUp input {
+  border-color: $border-color;
+  border-style: $border-style;
+  border-width: $border-1;
+  outline: none;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  transition: border-color 200ms;
+
+  &:focus {
+    border-color: $accent;
+  }
+}
+
+.save-btn {
+  width: 100%;
+  height: auto;
+}
+
+.mode-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: smaller;
+  color: $midgrey;
+}
+
+.login-link,
+.sign-up-link {
+  text-decoration: underline;
+}
+
+.error {
+  background: $red;
+  color: $white;
+  text-align: center;
+  line-height: 1;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  animation: shake 200ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,24 @@
+<template name="posts_stars">
+  <div class="absolute-center column center no-pointer-events">
+    {{#ifEsHasNoResults index="posts"}}
+      <span class="text-align-center fadeInUp">
+        <div class="h3 color-accent">Dang it.</div>
+        No matches were found.
+      </span>
+    {{/ifEsHasNoResults}}
+
+    {{#ifEsIsSearching index="posts"}}
+      {{> loader}}
+    {{/ifEsIsSearching}}
+  </div>
+
+  {{#esEach index="posts"}}
+    {{#if upvoted}}
+      {{> post_item}}
+    {{/if}}
+  {{/esEach}}
+
+  <div class="row center w100 vh20" >
+    {{> esLoadMoreButton index="posts" class="btn btn-outline h-auto" howMany=12}}
+  </div>
+</template>

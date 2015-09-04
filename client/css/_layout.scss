@@ -1,0 +1,23 @@
+$container-width:  600px;
+$container-wider:  800px;
+$container-widest: 1000px;
+
+main {
+  min-height: 100vh;
+  margin-top: 5%;
+}
+
+.container  {
+  max-width: $container-width;
+  padding: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container.wider {
+  max-width: $container-wider;
+}
+
+.container.widest {
+  max-width: $container-widest;
+}

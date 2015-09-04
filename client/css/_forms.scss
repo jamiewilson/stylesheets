@@ -1,0 +1,37 @@
+.btn-save {
+  @include small {
+    margin-right: 0;
+  }
+}
+
+.label {
+  color: $midgrey;
+  width: 100%;
+  position: relative;
+}
+
+.label-note {
+  color: darken($grey, 15%);
+  font-size: smaller;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+//====================================================
+//  Image Preview
+//====================================================
+
+.image-thumbnail {
+  height: 3rem;
+  width: 4rem;
+  border-radius: $border-radius;
+  background: $white url(../img/loading.gif) no-repeat center;
+  margin-right: 1rem;
+  object-fit: cover;
+  object-position: left;
+}
+
+.image-thumbnail[src=""] {
+   display: none;
+}

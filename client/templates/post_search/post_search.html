@@ -1,0 +1,12 @@
+<template name="post_search">
+  <div class="row bg-silver">
+    {{> esInput index="posts" placeholder="Search..." allDocsOnEmpty="true" timeout="400" type="search" class="input search-input novalidate flex3 bg-transparent js-autofocus"}}
+    <select class="select flex1 bg-transparent js-sort-select">
+      <option selected>Newest</option>
+      <option data-sort="oldest">Oldest</option>
+      <option data-sort="stars">Most Stars</option>
+      <option data-sort="a-z">A-Z</option>
+      <option data-sort="z-a">Z-A</option>
+    </select>
+  </div>
+</template>

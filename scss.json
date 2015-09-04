@@ -1,0 +1,7 @@
+{
+  "outputStyle": "compressed",
+  "enableAutoprefixer": true,
+  "autoprefixerOptions": {
+      "remove": true
+  }
+}

@@ -1,0 +1,127 @@
+$screenshot-height: 188px;
+
+.post-item {
+  position: relative;
+  background: $white;
+  align-self: flex-start;
+  animation: fadeInUp 300ms;
+  transform: translate3d(0, 0, 0);
+  transform-origin: bottom;
+  -webkit-backface-visibility: hidden;
+  @include large {
+    box-shadow: 0 6px 12px -4px rgba(36, 45, 50, 0.1);
+    margin: 1rem;
+    min-width: 250px;
+    max-width: 250px
+  }
+}
+
+.post-item:nth-child(3n+3),
+.post-item:nth-child(5n+1) {
+  animation-duration: 500ms; }
+
+.post-item:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 6px 10px -3px rgba(36, 45, 50, 0.1);
+}
+
+.star-badge {
+  font-size: small;
+  background: fade-out($black, 0.25);
+  color: $white;
+  padding: 0.4rem 0.75rem 0.5rem;
+}
+
+.star-icon {
+  vertical-align: top;
+  margin-right: 0.25rem;
+  path {
+    fill: currentColor;
+  }
+}
+
+.star-count {
+  line-height: 1;
+  vertical-align: bottom;
+}
+
+.js-downvote .star-icon {
+  color: $accent;
+  animation: scale 200ms cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
+}
+
+.screenshot-wrap {
+  line-height: 0;
+}
+
+.screenshot-loader {
+  background: $silver;
+  opacity: 0.8;
+}
+
+.screenshot-loader .loader {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.screenshot-loader .path {
+  stroke: fade-out($white, 0.5);
+}
+
+.screenshot {
+  min-height: $screenshot-height;
+  filter: brightness(0.85);
+  object-fit: cover;
+}
+
+.post-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  @include small {
+    font-weight: 600;
+  }
+}
+
+.post-description {
+  font-size: 0.875rem;
+  color: $midgrey;
+  @include large {
+    color: darken($grey, 15%);
+  }
+}
+
+.post-edit {
+  cursor: pointer;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.edit-background,
+.edit-icon {
+  transition: fill 300ms;
+}
+
+.edit-background {
+  fill: $silver;
+}
+
+.edit-icon {
+  fill: $grey;
+}
+
+.post-edit:hover {
+  .edit-background {
+    fill: $accent;
+  }
+  .edit-icon {
+    fill: $white;
+  }
+}

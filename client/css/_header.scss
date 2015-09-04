@@ -1,0 +1,55 @@
+.nav {
+  min-height: 125px;
+  padding: 1rem;
+  @include large {
+    padding: 3rem;
+    flex-direction: row;
+  }
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: $black;
+  font-weight: bold;
+  transition: letter-spacing 200ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  @include small {
+    padding: 1rem 0;
+  }
+  &:hover {
+    letter-spacing: 6px;
+  }
+}
+
+.no-tracking {
+  letter-spacing: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  &:not(:first-child) {
+    margin-left: 2rem;
+  }
+  @include small {
+    padding: 1rem 0;
+  }
+}
+
+.input.search-input {
+  border-width: 0;
+  min-height: 60px;
+  border-right: 2px solid $lightgrey;
+  -webkit-appearance: none;
+  &:focus {
+    border-color: $grey;
+  }
+  @include large {
+    padding-left: 3rem;
+  }
+}
+
+.select {
+  border-width: 0;
+  min-height: 60px;
+  min-width: 125px;
+}

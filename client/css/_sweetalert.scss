@@ -1,0 +1,53 @@
+.sweet-overlay {
+  background: fade-out($black, 0.1);
+}
+
+.sweet-alert {
+  font-family: $base-font;
+  $text-color: $midgrey;
+  padding: ($padding-fixed * 3) ($padding-fixed * 2);
+  text-align: center;
+  border-radius: $border-3;
+
+  .sa-icon { margin: 0 auto 1rem auto; }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: $border-3;
+
+    &.confirm { background-color: $accent !important; }
+    &.cancel { background-color: $grey !important; }
+  }
+
+  input {
+    border-color: $border-color;
+    border-style: $border-style;
+    border-width: $border-1;
+    outline: none;
+    padding: $padding-fixed;
+    width: 100%;
+    transition: border-color 200ms;
+
+    &:focus {
+      border-color: $midgrey;
+      box-shadow: none;
+    }
+  }
+}
+
+@keyframes showSweetAlert {
+  0%    { transform: scale(0.85); }
+  100%  { transform: scale(1);   }
+}
+
+@keyframes hideSweetAlert {
+  0%    { transform: scale(1) }
+  100%  { transform: scale(0.85);   }
+}

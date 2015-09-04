@@ -1,0 +1,29 @@
+<template name="post_edit">
+  <form class="container fadeInUp">
+
+    <label class="label" for="link">Link</label>
+    <input class="input mb2" name="link" type="text" value="{{link}}" placeholder="http://" tabindex="1" required/>
+
+    <label class="label" for="title">Title <span class="label-note js-counter-title">70</span></label>
+    <input class="input mb2" name="title" type="text" value="{{title}}" placeholder="Name your post" tabindex="2" required/>
+
+    <label class="label" for="description">Description <span class="label-note js-counter-description">140</span></label>
+    <textarea class="input textarea resize-vertical lh3 mb2" name="description" type="text" value="{{description}}" placeholder="Short description" rows="2" tabindex="3" required></textarea>
+
+    <label class="label" for="image">Image</label>
+    <div class="row center-left mb2">
+      <img class="image-thumbnail" src="{{#if image}}{{image}}{{else}}http://api.screenshotmachine.com/?key=0151a3&size=N&url={{link}}{{/if}}">
+      <div class="filepicker flex1 btn btn-outline">Replace Image</div>
+      <input class="input hidden" type="text" name="image" tabindex="4"/>
+    </div>
+
+    <label class="label" for="color">Color</label>
+    <input class="input novalidate w100 mb3" name="color" type="color" value="{{#if color}}{{color}}{{else}}#FFFFFF{{/if}}" tabindex="5"/>
+
+    <div class="row space-between">
+      <input class="btn-save btn flex1 mb1 mr1" type="submit" value="Save Edits"/>
+      <button class="btn-outline color-red js-delete">Delete</button>
+    </div>
+
+  </form>
+</template>
