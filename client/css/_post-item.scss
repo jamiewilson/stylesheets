@@ -3,12 +3,13 @@ $screenshot-height: 188px;
 .post-item {
   position: relative;
   background: $white;
+  margin-bottom: 1rem;
   align-self: flex-start;
-  animation: fadeInUp 300ms;
-  transform: translate3d(0, 0, 0);
-  transform-origin: bottom;
-  -webkit-backface-visibility: hidden;
   @include large {
+    animation: fadeInUp 300ms;
+    transform: translate3d(0, 0, 0);
+    transform-origin: bottom;
+    -webkit-backface-visibility: hidden;
     box-shadow: 0 6px 12px -4px rgba(36, 45, 50, 0.1);
     margin: 1rem;
     min-width: 250px;
@@ -21,8 +22,9 @@ $screenshot-height: 188px;
   animation-duration: 500ms; }
 
 .post-item:active {
-  transform: translateY(0.1rem);
-  box-shadow: 0 6px 10px -3px rgba(36, 45, 50, 0.1);
+  @include large {
+    transform: translateY(0.1rem);
+  }
 }
 
 .star-badge {
@@ -30,6 +32,13 @@ $screenshot-height: 188px;
   background: fade-out($black, 0.25);
   color: $white;
   padding: 0.4rem 0.75rem 0.5rem;
+  transition: padding 100ms $bounce;
+  &:hover {
+    padding: 0.6rem 1rem 0.8rem;
+  }
+  @include small {
+    padding: 0.6rem 1rem 0.8rem;
+  }
 }
 
 .star-icon {
@@ -45,9 +54,13 @@ $screenshot-height: 188px;
   vertical-align: bottom;
 }
 
+.js-upvote .star-icon {
+  animation: scaleUp 200ms $bounce;
+}
+
 .js-downvote .star-icon {
   color: $accent;
-  animation: scale 200ms cubic-bezier(0.5, -0.5, 0.5, 1.5) forwards;
+  animation: fadeInUp 200ms $bounce;
 }
 
 .screenshot-wrap {
@@ -102,6 +115,15 @@ $screenshot-height: 188px;
   position: absolute;
   bottom: 0;
   right: 0;
+  @include small {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.edit-wrap {
+  height: 100%;
+  width: 100%;
 }
 
 .edit-background,

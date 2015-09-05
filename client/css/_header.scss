@@ -12,13 +12,15 @@
   letter-spacing: 5px;
   color: $black;
   font-weight: bold;
-  transition: letter-spacing 200ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
-  @include small {
-    padding: 1rem 0;
+  padding: 1rem 0;
+  transition: letter-spacing 200ms $bounce;
+  @include large {
+    padding: 0;
+    &:hover {
+      letter-spacing: 6px;
+    }
   }
-  &:hover {
-    letter-spacing: 6px;
-  }
+
 }
 
 .no-tracking {
