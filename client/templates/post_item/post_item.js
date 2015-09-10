@@ -26,11 +26,16 @@ Template.post_item.events({
   'click .js-upvote': function(e) {
     e.preventDefault();
     e.stopPropagation();
-    // if user is logged in
     var userId = Meteor.userId();
-    if (userId) {
+    // if user is logged in
+    if (userId && (Meteor.user().emails[0].verified === true)) {
       // call upvote meteor method on click
       Meteor.call('upvote', this._id);
+      // track event with Segment
+      analytics.track('Upvoted');
+    } else if (Meteor.user().emails[0].verified === false) {
+      // give user option to resend verify email
+      verifyEmailModal();
     } else {
       // open login modal instead
       openModal();
@@ -41,9 +46,13 @@ Template.post_item.events({
     e.stopPropagation();
     // if user is logged in
     var userId = Meteor.userId();
-    if (userId) {
+    if (userId && (Meteor.user().emails[0].verified === true)) {
       // call upvote meteor method on click
       Meteor.call('downvote', this._id);
+      // track event with Segment
+      analytics.track('Downvoted');
+    } else if (Meteor.user().emails[0].verified === false) {
+      verifyEmailModal();
     } else {
       // open login modal instead
       openModal();
@@ -53,6 +62,11 @@ Template.post_item.events({
     e.preventDefault();
     e.stopPropagation();
     var currentPostId = this._id;
-    Router.go('edit', {_id: currentPostId});
+    var userId = Meteor.userId();
+    if (userId && (Meteor.user().emails[0].verified === true)) {
+      Router.go('edit', {_id: currentPostId});
+    } else {
+      verifyEmailModal();
+    }
   }
 });

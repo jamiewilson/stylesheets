@@ -7,7 +7,7 @@
       <div class="row center-right">
         {{#if currentUser}}
         <a class="nav-link color-midgrey nowrap" href="{{pathFor 'stars'}}">{{starCount}} Starred</a>
-        <a class="nav-link bold" href="{{pathFor 'submit'}}">Submit</a>
+        <a class="nav-link bold js-submit" href="{{pathFor 'submit'}}">Submit</a>
         {{else}}
           <span class="link p1 js-login">Login / Sign Up</span>
         {{/if}}

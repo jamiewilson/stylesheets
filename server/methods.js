@@ -18,6 +18,9 @@ getEmbedlyData = function(url) {
 }
 
 Meteor.methods({
+  sendVerificationEmail: function(userId) {
+    Accounts.sendVerificationEmail(userId);
+  },
   getEmbedlyData: function(url) {
     check(url, String);
     return getEmbedlyData(url);

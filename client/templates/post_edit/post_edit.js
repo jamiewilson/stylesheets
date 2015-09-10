@@ -47,6 +47,8 @@ Template.post_edit.events({
       } else {
         // if successfully updated, go to new post page
         sweetAlert("Updated!", "Your edits have been saved.", "success");
+        // track event with segment
+        analytics.track('Edited Post');
       }
     });
   },
@@ -75,6 +77,8 @@ Template.post_edit.events({
             }, function() {
               Router.go('home');
             });
+            // track event with segment
+            analytics.track('Deleted Post');
           }
         });
       }

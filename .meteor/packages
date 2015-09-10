@@ -8,6 +8,7 @@ meteor-platform
 iron:router
 http
 accounts-password
+email
 
 fongandrew:login-components
 kevohagan:sweetalert
@@ -16,6 +17,8 @@ matteodem:easy-search
 natestrauser:filepicker-plus
 okgrow:iron-router-autoscroll
 rounce:fastclick
+percolatestudio:segment.io
+percolate:intercom
 
 # dev packages
 fourseven:scss

@@ -1,8 +1,12 @@
 LoginComponents.loginCallback = function() {
   closeModal();
+  // track event with segment
+  analytics.track('Logged In');
 };
 LoginComponents.signupCallback = function() {
   closeModal();
+  // track event with segment
+  analytics.track('Signed Up');
 };
 
 LoginComponents.showTabs = false;

@@ -35,3 +35,26 @@
 .image-thumbnail[src=""] {
    display: none;
 }
+
+//====================================================
+//  Search
+//====================================================
+
+.input.search-input {
+  border-width: 0;
+  min-height: 60px;
+  border-right: 2px solid $lightgrey;
+  -webkit-appearance: none;
+  &:focus {
+    border-color: darken($lightgrey, 5%);
+  }
+  @include large {
+    padding-left: 3rem;
+  }
+}
+
+.select {
+  border-width: 0;
+  min-height: 60px;
+  min-width: 125px;
+}

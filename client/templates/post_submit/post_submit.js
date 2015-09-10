@@ -40,31 +40,38 @@ Template.post_submit.events({
       image: $(e.target).find('[name=image]').val()
     };
 
-    Meteor.call('submitPost', postProperties, function (error, result) {
-      // abort and alert error reason
-      if (error) {
-        sweetAlert(error.reason);
-      }
-      // tell user the link in already posted
-      if (result.postExists) {
-        sweetAlert({
-          title: "D’oh! That’s already been posted.",
-          type: "info",
-          confirmButtonText: "Take a look. And upvote it!"
-        }, function() {
-          Router.go('post', {_id: result._id});
-        });
-      } else {
-        // if successfully posted, go to new post page
-        sweetAlert({
-          title: "Thanks for posting!",
-          type: "success",
-          confirmButtonText: "View the latest posts."
-        }, function() {
-          Router.go('home');
-        });
-
-      }
-    });
+    // check if user email is verified
+    if (Meteor.user().emails[0].verified === true) {
+      Meteor.call('submitPost', postProperties, function (error, result) {
+        // abort and alert error reason
+        if (error) {
+          sweetAlert(error.reason);
+        }
+        // tell user the link in already posted
+        if (result.postExists) {
+          sweetAlert({
+            title: "D’oh! That’s already been posted.",
+            type: "info",
+            confirmButtonText: "Take a look. And upvote it!"
+          }, function() {
+            Router.go('post', {_id: result._id});
+          });
+        } else {
+          // if successfully posted, go to new post page
+          sweetAlert({
+            title: "Thanks for posting!",
+            type: "success",
+            confirmButtonText: "View the latest posts."
+          }, function() {
+            Router.go('home');
+          });
+          // track event with segment
+          analytics.track('Submitted Post');
+        }
+      });
+    // if not verified allow resending
+    } else {
+      verifyEmailModal();
+    }
   }
 });

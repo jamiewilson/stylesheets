@@ -5,6 +5,10 @@ $screenshot-height: 188px;
   background: $white;
   margin-bottom: 1rem;
   align-self: flex-start;
+  &:focus {
+    outline: none;
+    box-shadow: 0 5px $accent;
+  }
   @include large {
     animation: fadeInUp 300ms;
     transform: translate3d(0, 0, 0);
@@ -20,12 +24,6 @@ $screenshot-height: 188px;
 .post-item:nth-child(3n+3),
 .post-item:nth-child(5n+1) {
   animation-duration: 500ms; }
-
-.post-item:active {
-  @include large {
-    transform: translateY(0.1rem);
-  }
-}
 
 .star-badge {
   font-size: small;

@@ -7,6 +7,14 @@ Template.header.helpers({
 });
 
 Template.header.events({
+  'click .js-submit': function(e) {
+    e.preventDefault();
+    if (Meteor.user().emails[0].verified === true) {
+      Router.go('submit')
+    } else {
+      verifyEmailModal();
+    }
+  },
   // clear input when click on logo
   'click .js-clear-search': function() {
     // Get instance of search based on index
