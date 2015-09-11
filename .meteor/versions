@@ -10,6 +10,8 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+chuangbo:cookie@1.1.0
+coffeescript@1.0.6
 dburles:mongo-collection-instances@0.3.4
 ddp@1.1.0
 deps@1.0.7
@@ -24,6 +26,7 @@ fourseven:scss@3.2.0
 geojson-utils@1.0.3
 gwendall:session-json@0.1.7
 handlebars@1.0.3
+houston:admin@2.0.5
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
@@ -37,6 +40,8 @@ iron:location@1.0.9
 iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
+jparker:crypto-core@0.1.0
+jparker:crypto-md5@0.1.1
 jquery@1.11.3_2
 json@1.0.3
 kevohagan:sweetalert@1.0.0
@@ -51,6 +56,10 @@ meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:aggregate@1.2.1
 meteorhacks:collection-utils@1.2.0
+meteorhacks:fast-render@2.10.0
+meteorhacks:inject-data@1.4.1
+meteorhacks:picker@1.0.3
+meteorhacks:subs-manager@1.6.2
 meteortoys:toykit@0.8.7
 minifiers@1.1.5
 minimongo@1.0.8
@@ -79,6 +88,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
+tmeasday:paginated-subscription@0.2.4
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3

@@ -8,6 +8,12 @@ Template.post_item.helpers({
     var userId = Meteor.userId();
     if (_.include(this.upvoters, userId))
       return true;
+  },
+  hash: function() {
+    url = this.link;
+    secret = Meteor.settings.public.screenshotMachineSecret;
+    var hash = CryptoJS.MD5(url + secret).toString();
+    return hash;
   }
 });
 
@@ -33,7 +39,7 @@ Template.post_item.events({
       Meteor.call('upvote', this._id);
       // track event with Segment
       analytics.track('Upvoted');
-    } else if (Meteor.user().emails[0].verified === false) {
+    } else if (userId && Meteor.user().emails[0].verified === false) {
       // give user option to resend verify email
       verifyEmailModal();
     } else {
@@ -51,7 +57,8 @@ Template.post_item.events({
       Meteor.call('downvote', this._id);
       // track event with Segment
       analytics.track('Downvoted');
-    } else if (Meteor.user().emails[0].verified === false) {
+    } else if (userId && Meteor.user().emails[0].verified === false) {
+      // give user option to resend verify email
       verifyEmailModal();
     } else {
       // open login modal instead

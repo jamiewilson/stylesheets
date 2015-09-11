@@ -9,7 +9,6 @@ iron:router
 http
 accounts-password
 email
-
 fongandrew:login-components
 kevohagan:sweetalert
 iamkevingreen:imagesloaded
@@ -17,9 +16,11 @@ matteodem:easy-search
 natestrauser:filepicker-plus
 okgrow:iron-router-autoscroll
 rounce:fastclick
+meteorhacks:fast-render
+meteorhacks:subs-manager
+houston:admin
 percolatestudio:segment.io
 percolate:intercom
-
-# dev packages
+jparker:crypto-md5
 fourseven:scss
 msavin:mongol

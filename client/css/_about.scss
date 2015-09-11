@@ -1,0 +1,11 @@
+.h1-about {
+  @include small {
+     font-size: 1.6rem;
+  }
+}
+
+.h2-about {
+  @include small {
+     font-size: 1.4rem;
+  }
+}

@@ -1,20 +1,25 @@
-Template.post_edit.events({
+Template.post_edit.helpers({
+  hash: function() {
+    url = this.link;
+    secret = Meteor.settings.public.screenshotMachineSecret;
+    var hash = CryptoJS.MD5(url + secret).toString();
+    return hash;
+  }
+});
 
+Template.post_edit.events({
   // lib/embedly.js
   'blur [name=link]': function() {
     fillEmbedlyData();
   },
-
   // lib/counters.js
   'keydown [name=title]': function() {
     truncateTitle();
   },
-
   // lib/counters.js
   'keydown [name=description]': function() {
     truncateDescription();
   },
-
   'click .filepicker': function (e) {
     filepicker.pick({
       mimetypes: ['image/gif','image/jpeg','image/png'],

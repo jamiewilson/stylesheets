@@ -1,20 +1,16 @@
 Template.post_submit.events({
-
   // lib/embedly.js
   'blur [name=link]': function() {
     fillEmbedlyData();
   },
-
   // lib/counters.js
   'keydown [name=title]': function() {
     truncateTitle();
   },
-
   // lib/counters.js
   'keydown [name=description]': function() {
     truncateDescription();
   },
-
   'click .filepicker': function (e) {
     filepicker.pick({
       mimetypes: ['image/gif','image/jpeg','image/png'],

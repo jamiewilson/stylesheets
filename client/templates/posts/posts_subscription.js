@@ -1,2 +1,4 @@
+// meteorhacks:subs-manager
+var subs = new SubsManager();
 // Get all the posts output by post publication
-Meteor.subscribe('posts');
+subs.subscribe('posts');
