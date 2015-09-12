@@ -14,7 +14,7 @@
     <div class="row center-left mb2">
       <img class="image-thumbnail" src="{{#if image}}{{image}}{{else}}http://api.screenshotmachine.com/?key=0151a3&size=T&hash={{hash}}&url={{link}}{{/if}}">
       <div class="filepicker flex1 btn btn-outline">Replace Image</div>
-      <input class="input hidden" type="text" name="image" tabindex="4"/>
+      <input class="input hidden" value="{{image}}" type="text" name="image" tabindex="4"/>
     </div>
 
     <label class="label" for="color">Color</label>

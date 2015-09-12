@@ -14,7 +14,10 @@ Template.post_submit.events({
   'click .filepicker': function (e) {
     filepicker.pick({
       mimetypes: ['image/gif','image/jpeg','image/png'],
-      cropRatio: 1.3333/1,
+      maxSize: 2*1024*1024,
+      cropRatio: 4/3,
+      imageDim: [400, 300],
+      cropForce: true,
       multiple: false
     },
     function(blob){

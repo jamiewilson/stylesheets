@@ -7,7 +7,6 @@ $screenshot-height: 188px;
   align-self: flex-start;
   &:focus {
     outline: none;
-    box-shadow: 0 5px $accent;
   }
   @include large {
     animation: fadeInUp 300ms;

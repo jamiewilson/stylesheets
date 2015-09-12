@@ -23,7 +23,10 @@ Template.post_edit.events({
   'click .filepicker': function (e) {
     filepicker.pick({
       mimetypes: ['image/gif','image/jpeg','image/png'],
-      cropRatio: 1.3333/1,
+      maxSize: 2*1024*1024,
+      cropRatio: 4/3,
+      imageDim: [400, 300],
+      cropForce: true,
       multiple: false
     },
     function(blob){
@@ -50,8 +53,14 @@ Template.post_edit.events({
       if (error) {
         return sweetAlert(error.reason);
       } else {
-        // if successfully updated, go to new post page
-        sweetAlert("Updated!", "Your edits have been saved.", "success");
+        // if successfully updated, go to homepage
+        sweetAlert({
+          title: "Your updates were saved!",
+          type: "success",
+          confirmButtonText: "Back to homepage"
+        }, function() {
+          Router.go('home');
+        });
         // track event with segment
         analytics.track('Edited Post');
       }
