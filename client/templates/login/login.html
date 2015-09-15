@@ -1,5 +1,11 @@
 <template name="login">
+  {{#if resetPassword}}
+  <div class="modal depth-10 is-open">
+    {{> reset_password}}
+  </div>
+  {{else}}
   <div class="modal depth-10">
     {{> loginOrSignUp}}
   </div>
+  {{/if}}
 </template>

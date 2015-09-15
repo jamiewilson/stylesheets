@@ -30,10 +30,9 @@
   transform: scale(1);
 }
 
-#loginOrSignUp {
-  min-height: 350px;
+#loginOrSignUp,
+#resetPasswordForm {
   border-radius: $border-radius;
-
   opacity: 0;
   transform: translateY(1.5rem);
   transition-duration: 500ms;
@@ -43,17 +42,20 @@
   }
 }
 
-.is-open #loginOrSignUp  {
+.is-open #loginOrSignUp,
+.is-open #resetPasswordForm  {
   opacity: 1;
   transform: translateY(0);
 }
 
-#loginOrSignUp {
+#loginOrSignUp,
+#resetPasswordForm {
   background: $silver;
   padding: 2rem;
 }
 
-#loginOrSignUp input {
+#loginOrSignUp input,
+#resetPasswordForm input[type='password'] {
   border-color: $border-color;
   border-style: $border-style;
   border-width: $border-1;
@@ -68,7 +70,8 @@
   }
 }
 
-.save-btn {
+.save-btn,
+.btn-submit {
   width: 100%;
   height: auto;
 }
@@ -87,6 +90,7 @@
   text-decoration: underline;
 }
 
+.success,
 .error {
   background: $red;
   color: $white;
@@ -98,4 +102,10 @@
   width: 100%;
   display: block;
   margin-bottom: 1rem;
+}
+
+.success {
+  background: $green;
+  color: $black;
+  animation: flip 200ms $bounce;
 }

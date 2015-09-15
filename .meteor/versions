@@ -22,6 +22,7 @@ fongandrew:instance-vars@0.2.0
 fongandrew:login-components@0.1.0
 fongandrew:save-button@0.1.0
 fongandrew:spacebars-helpers@0.1.0
+force-ssl@1.0.4
 fourseven:scss@3.2.0
 geojson-utils@1.0.3
 gwendall:session-json@0.1.7

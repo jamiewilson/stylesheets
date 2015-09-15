@@ -11,6 +11,12 @@ LoginComponents.signupCallback = function() {
 
 LoginComponents.showTabs = false;
 
+Template.login.helpers({
+ resetPassword: function(){
+  return Session.get('resetPassword');
+ }
+});
+
 Template.login.events({
   'blur #loginOrSignUp #email': function(e) {
     input = $.trim($(e.target).val());

@@ -27,7 +27,7 @@ Template.header.events({
   'click .js-login': function(e) {
     openModal();
   },
-  'click #loginOrSignUp': function(e) {
+  'click #loginOrSignUp, click #resetPasswordForm': function(e) {
     e.stopPropagation();
   },
   'click .is-open': function() {
