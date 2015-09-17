@@ -1,6 +1,6 @@
 getEmbedlyData = function(url) {
   var data = {};
-  var extractBase = 'https://api.embed.ly/1/extract?secure=true';
+  var extractBase = 'http://api.embed.ly/1/extract';
   var embedlyKey = Meteor.settings.public.embedlyApiKey;
 
   try {

@@ -1,6 +1,14 @@
 .footer {
   align-self: flex-end;
   width: 100%;
-  max-height: 100px;
   margin-top: 10%;
+  @include small {
+    flex-direction: column;
+  }
+}
+
+.byline {
+  @include small {
+    margin-bottom: 1rem;
+  }
 }

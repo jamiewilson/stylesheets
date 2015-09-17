@@ -23,16 +23,19 @@
 
 }
 
+// needed to make sure logotype is centered
+// otherwise the tracking on the last letter
+// makes it look too far left of center
 .no-tracking {
   letter-spacing: 0;
 }
 
 .nav-link {
   display: inline-block;
-  &:not(:first-child) {
-    margin-left: 2rem;
-  }
-  @include small {
-    padding: 1rem 0;
+   padding: 1rem;
+   @include large {
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
