@@ -85,7 +85,7 @@ $screenshot-height: 188px;
 
 .screenshot {
   min-height: $screenshot-height;
-  filter: brightness(0.85);
+  filter: brightness(0.85) contrast(0.85);
   object-fit: cover;
 }
 

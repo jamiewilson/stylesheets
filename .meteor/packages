@@ -22,6 +22,7 @@ houston:admin
 percolatestudio:segment.io
 percolate:intercom
 jparker:crypto-md5
+studiointeract:slack-invite
 fourseven:scss
 msavin:mongol
-force-ssl
+# force-ssl

@@ -10,6 +10,16 @@
   }
 }
 
+.social-cta {
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  width: 140px;
+  @include small {
+    width: 100%;
+  }
+}
+
 .btn-squarecash {
   background-color: #22a301;
 }

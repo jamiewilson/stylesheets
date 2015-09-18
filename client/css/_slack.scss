@@ -1,0 +1,43 @@
+.slack-form {
+  padding: 1rem;
+
+  input {
+    @extend .input;
+    max-width: 300px !important;
+    margin-bottom: 1rem !important;
+    margin-right: 1rem;
+    @include medium {
+      margin-right: 0;
+    }
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px !important;
+  }
+
+  .slack-info {
+    font-size: 1rem;
+    color: $midgrey;
+    margin-bottom: 2rem;
+  }
+
+  .slack-info br {
+    display: none;
+  }
+
+  .message {
+    background: $green;
+    color: $white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    animation: flip 200ms $bounce;
+    max-width: 325px;
+    margin: 1rem auto;
+  }
+
+  .message.error {
+    background: $red;
+  }
+}
