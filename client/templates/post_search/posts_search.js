@@ -1,6 +1,6 @@
 Meteor.startup(function () {
   Posts.initEasySearch(['title', 'link', 'description', 'createdBy'], {
-    'limit': 12,
+    'limit': 50,
     'sort': function() {
       // most stars
       if (this.props.sortBy === 'stars') {

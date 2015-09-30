@@ -64,6 +64,8 @@ Template.post_submit.events({
           }, function() {
             Router.go('home');
           });
+          // post a tweet by @stylesheetsco
+          Meteor.call('postTweet', postProperties);
           // track event with segment
           analytics.track('Submitted Post');
         }

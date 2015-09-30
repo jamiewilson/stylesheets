@@ -4,17 +4,35 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
+# core
 iron:router
 http
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
 accounts-password
 email
+force-ssl
+
+# third-party
+fourseven:scss@1.0.0
 fongandrew:login-components
 kevohagan:sweetalert
 iamkevingreen:imagesloaded
 matteodem:easy-search
 natestrauser:filepicker-plus
-okgrow:iron-router-autoscroll
+okgrow:router-autoscroll
 rounce:fastclick
 meteorhacks:fast-render
 meteorhacks:subs-manager
@@ -23,6 +41,7 @@ percolatestudio:segment.io
 percolate:intercom
 jparker:crypto-md5
 studiointeract:slack-invite
-fourseven:scss
-msavin:mongol
-# force-ssl
+mrt:twit
+
+# local
+rss

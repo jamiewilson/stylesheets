@@ -8,10 +8,6 @@ Template.post_edit.helpers({
 });
 
 Template.post_edit.events({
-  // lib/embedly.js
-  'blur [name=link]': function() {
-    fillEmbedlyData();
-  },
   // lib/counters.js
   'keydown [name=title]': function() {
     truncateTitle();

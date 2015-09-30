@@ -56,10 +56,26 @@ Meteor.methods({
     });
     // add post to posts collection
     var postId = Posts.insert(postComplete);
-    // take user to post's page
     return {
       _id: postId
     };
+  },
+
+  postTweet: function(postProperties) {
+    Twitter = new TwitMaker({
+      consumer_key: Meteor.settings.twitter.consumerKey,
+      consumer_secret: Meteor.settings.twitter.consumerSecret,
+      access_token: Meteor.settings.twitter.accessToken,
+      access_token_secret: Meteor.settings.twitter.accessTokenSecret
+    });
+
+    var tweetContent = postProperties.title + ": " + postProperties.link + " upvote on https://stylesheets.co #CSS #webdev";
+    Twitter.post('statuses/update', {
+      status: tweetContent
+    }, function(error) {
+      if (error)
+        return console.log(error);
+    });
   },
 
   editPost: function (currentPostId, postProperties) {

@@ -1,4 +1,4 @@
-#Stylesheets is a commnunity-generated collection of the best CSS resources.
+#Stylesheets is a community-generated collection of the best CSS resources.
 
 [![Stories in Ready](https://badge.waffle.io/jamiewilson/stylesheets.svg?label=ready&title=Ready)](http://waffle.io/jamiewilson/stylesheets)
 

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "rss": {
+      "version": "1.0.0",
+      "dependencies": {
+        "mime": {
+          "version": "1.3.4"
+        },
+        "xml": {
+          "version": "1.0.0"
+        }
+      }
+    }
+  }
+}
