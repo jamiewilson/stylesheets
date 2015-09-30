@@ -1,0 +1,17 @@
+<template name="subscribe">
+  <div class="row vh20 center">
+    <form>
+    <div class="input-group">
+      {{#if message}}
+        <p class="mailchimp-message">{{{message}}}</p>
+      {{/if}}
+      {{#if currentUser}}
+        <input class="input" type="email" placeholder="email@example.com" value="{{email}}"/>
+      {{else}}
+        <input class="input" type="email" placeholder="your@address.com"/>
+      {{/if}}
+      <button class="ml1" type="button">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</template>

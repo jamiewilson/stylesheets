@@ -42,6 +42,7 @@ percolate:intercom
 jparker:crypto-md5
 studiointeract:slack-invite
 mrt:twit
+miro:mailchimp
 
 # local
 rss
