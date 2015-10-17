@@ -9,6 +9,7 @@ main {
 
 .container  {
   max-width: $container-width;
+  width: $container-width;
   padding: 1rem;
   margin-right: auto;
   margin-left: auto;
@@ -16,8 +17,10 @@ main {
 
 .container.wider {
   max-width: $container-wider;
+  width: $container-wider;
 }
 
 .container.widest {
   max-width: $container-widest;
+  width: $container-widest;
 }

@@ -69,7 +69,7 @@ Meteor.methods({
       access_token_secret: Meteor.settings.twitter.accessTokenSecret
     });
 
-    var tweetContent = postProperties.title + ": " + postProperties.link + " upvote on https://stylesheets.co #CSS #webdev";
+    var tweetContent = postProperties.title + ": " + postProperties.link + " #CSS";
     Twitter.post('statuses/update', {
       status: tweetContent
     }, function(error) {
